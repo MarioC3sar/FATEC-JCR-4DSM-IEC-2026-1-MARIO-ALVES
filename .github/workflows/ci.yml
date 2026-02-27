@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ dev ]
 # dispara quando há PR para dev
-jobs:
+  jobs:
 # Definindo um job chamado "build"
   build:
     runs-on: ubuntu-latest # ambiente que o GitHub usa (máquina Linux)
