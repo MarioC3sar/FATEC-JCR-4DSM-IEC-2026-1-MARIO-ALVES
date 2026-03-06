@@ -1,7 +1,7 @@
 name: CI com ESLint
 on:
   push:
-    branches: [ dev, main ] # Adicionei main caso queira validar na branch principal também
+    branches: [ dev, main ] 
   pull_request:
     branches: [ dev ]
 
@@ -15,10 +15,9 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22' # Atualizei para a v22 para bater com o que você usa no Vostro
-
+          node-version: '22' 
       - name: Instalar dependências
-        # O uso do --legacy-peer-deps resolve o erro ERESOLVE que você teve
+      
         run: npm install --legacy-peer-deps 
 
       - name: Rodar ESLint
