@@ -20,8 +20,8 @@ jobs:
       - name: Instalar dependências
         
         run: npm install --legacy-peer-deps 
-        working-directory: Apresentacao-da-Disciplina/P1-Conteudos/Atividades/atividade4
+        working-directory: Apresentacao-da-Disciplina/P1-Conteudos/Atividades/Atividade04
 
       - name: Rodar ESLint
         run: npx eslint .
-        working-directory: Apresentacao-da-Disciplina/P1-Conteudos/Atividades/atividade4
+        working-directory: Apresentacao-da-Disciplina/P1-Conteudos/Atividades/Atividade04
