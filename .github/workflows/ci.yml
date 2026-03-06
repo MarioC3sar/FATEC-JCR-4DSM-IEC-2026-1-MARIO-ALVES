@@ -1,16 +1,25 @@
-
-name: CI Simples
+name: CI com ESLint
 on:
   push:
-    branches: [ dev ]
+    branches: [ dev, main ] # Adicionei main caso queira validar na branch principal também
   pull_request:
     branches: [ dev ]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v4
-      - name: Teste de funcionamento
-        run: echo "Pipeline do projeto INPE executado com sucesso!"
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # Atualizei para a v22 para bater com o que você usa no Vostro
+
+      - name: Instalar dependências
+        # O uso do --legacy-peer-deps resolve o erro ERESOLVE que você teve
+        run: npm install --legacy-peer-deps 
+
+      - name: Rodar ESLint
+        run: npx eslint .
