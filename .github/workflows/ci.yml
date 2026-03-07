@@ -22,5 +22,4 @@ jobs:
       # 4. Rodar ESLint
       - name: Rodar ESLint
         run: npx eslint .
-int
-  run: npx eslint .
+
