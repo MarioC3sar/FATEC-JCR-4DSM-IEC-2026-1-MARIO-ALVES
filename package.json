@@ -1,0 +1,29 @@
+{
+  "name": "fatec-jcr-4dsm-iec-2026-1-mario-alves",
+  "version": "1.0.0",
+  "description": "Disciplina de Integração e Entrega Contínua – 4º semestre DSM – 2026/1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarioC3sar/FATEC-JCR-4DSM-IEC-2026-1-MARIO-ALVES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MarioC3sar/FATEC-JCR-4DSM-IEC-2026-1-MARIO-ALVES/issues"
+  },
+  "homepage": "https://github.com/MarioC3sar/FATEC-JCR-4DSM-IEC-2026-1-MARIO-ALVES#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "globals": "^17.4.0",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.1"
+  }
+}
