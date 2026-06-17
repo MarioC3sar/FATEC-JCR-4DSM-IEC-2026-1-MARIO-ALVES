@@ -1,0 +1,28 @@
+{
+  "name": "iec-atividade-aula08",
+  "version": "1.0.0",
+  "description": "Atividade Prática - Aula 8 - Relatórios de Cobertura & Vulnerabilidade + Badges no README",
+  "main": "alerta.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "generate-pdf": "node generate-pdf.js"
+  },
+  "keywords": [
+    "inpe",
+    "coverage",
+    "ci",
+    "codecov",
+    "badges"
+  ],
+  "author": "Mario",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "codecov": "^3.8.3"
+  },
+  "dependencies": {
+    "pdfkit": "^0.15.0"
+  }
+}

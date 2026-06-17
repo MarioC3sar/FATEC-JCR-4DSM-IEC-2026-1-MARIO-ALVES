@@ -1,0 +1,42 @@
+name: CI Pipeline - Relatório de Cobertura & Codecov
+
+# Exercício 2: Configura o pipeline para rodar em Pull Requests para a main
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Testes, Cobertura e Integração Codecov
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Executar Testes com Cobertura (Exercício 1)
+        run: npm run test:coverage
+
+      # Exercício 4: Enviar automaticamente os relatórios ao Codecov
+      - name: Enviar Relatórios de Cobertura para o Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          file: ./coverage/clover.xml
+          flags: unittests
+          name: codecov-inpe-monitoring
+          fail_ci_if_error: false # Evita falhar a build inteira se o Codecov estiver temporariamente fora do ar
+          token: ${{ secrets.CODECOV_TOKEN }} # Necessário para o Codecov V4
