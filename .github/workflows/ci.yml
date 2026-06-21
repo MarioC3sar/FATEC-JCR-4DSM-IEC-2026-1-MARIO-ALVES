@@ -1,14 +1,24 @@
-name: CI Simples
+name: CI com ESLint
 on:
   push:
     branches: [dev]
   pull_request:
     branches: [dev]
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
+      # 1. Baixar o código
       - name: Checkout do repositório
         uses: actions/checkout@v4
-      - name: Teste de funcionamento
-        run: echo "CI funcionando no projeto INPE!"
+      # 2. Instalar Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      # 3. Instalar dependências
+      - name: Instalar dependências
+        run: npm install
+      # 4. Rodar ESLint
+      - name: Rodar ESLint
+        run: npx eslint .
